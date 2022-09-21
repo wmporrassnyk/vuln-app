@@ -42,6 +42,9 @@ jobs:
             chmod +x ./snyk
             sudo mv ./snyk /usr/local/bin/snyk
           # {{ Use the circlci build logs to add the missing step to the snyk setup commands here }}
+          # Pass the authentication token to snyk using the $SNYK_TOKEN environment variable
+          # Never place a Snyk auth token directly in a pipeline configuration file
+          # (this is a 'hardcoded secret'!)
 
         # (intructions page 2, step 1a)
         # Add commands to this `run` step to execute a snyk test with the following criteria:
